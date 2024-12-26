@@ -1,0 +1,64 @@
+/* no-preference */
+[data-theme='base'] {
+  /* light colored assignments */
+  --column-background: #f9fafb;
+  --column-text-color: inherited;
+  --color-background-cta: #1f2937;
+  --color-text-inverted: #f9fafb;
+}
+
+[data-theme='feature'] {
+  /* dark colored assignments */
+  --column-background: #1f2937;
+  --column-text-color: #f9fafb;
+  --color-background-cta: #f9fafb;
+  --color-text-inverted: #1f2937;
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme='base'] {
+    /* light colored assignments */
+  }
+
+  [data-theme='feature'] {
+    /* slight contrast to light assignments as needed */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme='base'] {
+    /* dark colored assignments */
+  }
+
+  [data-theme='feature'] {
+    /* slight contrast to dark assignments as needed */
+  }
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+header {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.column {
+  min-width: 0;
+  padding: 1.5rem;
+  background-color: var(--column-background);
+  color: var(--column-text-color);
+  border-radius: 0.5rem;
+}

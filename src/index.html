@@ -7,8 +7,20 @@
 
     <script type="module" src="/build/floede-components.esm.js"></script>
     <script nomodule src="/build/floede-components.js"></script>
+    <link rel="stylesheet" href="/build/floede-components.css" />
+    <link rel="stylesheet" href="/assets/styles/index.css" />
   </head>
-  <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+  <body data-theme="base">
+    <header>Floede Components</header>
+    <main>
+      <section class="column">
+        <floede-button>Button</floede-button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+      </section>
+      <section class="column feature" data-theme="feature">
+        <floede-button>Button</floede-button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+      </section>
+    </main>
   </body>
 </html>

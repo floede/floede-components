@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface FloedeButton {
+    }
+    interface FloedeInput {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +26,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLFloedeButtonElement extends Components.FloedeButton, HTMLStencilElement {
+    }
+    var HTMLFloedeButtonElement: {
+        prototype: HTMLFloedeButtonElement;
+        new (): HTMLFloedeButtonElement;
+    };
+    interface HTMLFloedeInputElement extends Components.FloedeInput, HTMLStencilElement {
+    }
+    var HTMLFloedeInputElement: {
+        prototype: HTMLFloedeInputElement;
+        new (): HTMLFloedeInputElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +45,16 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "floede-button": HTMLFloedeButtonElement;
+        "floede-input": HTMLFloedeInputElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface FloedeButton {
+    }
+    interface FloedeInput {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +70,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "floede-button": FloedeButton;
+        "floede-input": FloedeInput;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +79,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "floede-button": LocalJSX.FloedeButton & JSXBase.HTMLAttributes<HTMLFloedeButtonElement>;
+            "floede-input": LocalJSX.FloedeInput & JSXBase.HTMLAttributes<HTMLFloedeInputElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
