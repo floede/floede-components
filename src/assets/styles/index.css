@@ -1,7 +1,7 @@
 /* no-preference */
 [data-theme='base'] {
   /* light colored assignments */
-  --column-background: #f9fafb;
+  --column-background:#ebeff2;
   --column-text-color: inherited;
   --color-background-cta: #1f2937;
   --color-text-inverted: #f9fafb;
@@ -18,6 +18,8 @@
 @media (prefers-color-scheme: light) {
   [data-theme='base'] {
     /* light colored assignments */
+    --body-background-color: #f9fafb;
+    --body-text-color #1f2937;
   }
 
   [data-theme='feature'] {
@@ -28,10 +30,21 @@
 @media (prefers-color-scheme: dark) {
   [data-theme='base'] {
     /* dark colored assignments */
+    --body-background-color: #1f2937;
+    --body-text-color #f9fafb;
+
+    --column-background: #1f2937;
+    --column-text-color: #f9fafb;
+    --color-background-cta: #f9fafb;
+    --color-text-inverted: #1f2937;
   }
 
   [data-theme='feature'] {
     /* slight contrast to dark assignments as needed */
+    --column-background: #f9fafb;
+    --column-text-color: #1f2937;
+    --color-background-cta: #1f2937;
+    --color-text-inverted: #f9fafb;
   }
 }
 
@@ -39,6 +52,8 @@ body {
   margin: 0;
   padding: 2rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--body-background-color);
+  color: var(--body-text-color);
 }
 
 header {
